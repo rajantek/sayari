@@ -1,0 +1,85 @@
+:root {
+  --bg: #faf7f2;
+  --card: #ffffff;
+  --text: #2a2622;
+  --muted: #7a7168;
+  --accent: #9c2f4a;
+  --border: #e8e1d7;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17140f;
+    --card: #211d17;
+    --text: #efe8dc;
+    --muted: #9b9184;
+    --accent: #e0708a;
+    --border: #352f26;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+a { color: var(--accent); text-decoration: none; }
+.container { max-width: 640px; margin: 0 auto; padding: 16px; }
+.header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 16px; border-bottom: 1px solid var(--border);
+  max-width: 640px; margin: 0 auto; flex-wrap: wrap; gap: 8px;
+}
+.header nav { display: flex; gap: 14px; align-items: center; }
+.logo { font-weight: 600; font-size: 1.1rem; color: var(--text); }
+
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 18px; margin-bottom: 14px;
+}
+.center { text-align: center; }
+.muted { color: var(--muted); }
+.error { color: #c0392b; }
+
+.shayari { white-space: pre-line; font-size: 1.2rem; line-height: 1.9; margin: 0 0 8px; }
+.lang-hi { font-family: 'Noto Sans Devanagari', sans-serif; }
+.lang-ur { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.4; }
+.lang-en { font-family: 'Noto Serif', serif; font-style: italic; }
+.credit { color: var(--muted); margin: 0 0 8px; }
+.tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.tag { color: var(--muted); font-size: 0.85rem; }
+
+.card-footer { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+.author { display: flex; align-items: center; gap: 8px; color: var(--muted); }
+.author img { width: 26px; height: 26px; border-radius: 50%; }
+.actions { display: flex; align-items: center; gap: 12px; }
+
+button { font: inherit; cursor: pointer; }
+.btn {
+  background: var(--accent); color: #fff; border: 0; border-radius: 8px;
+  padding: 8px 16px; display: inline-block;
+}
+.btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.link { background: none; border: 0; color: var(--muted); padding: 0; }
+.link.danger:hover { color: #c0392b; }
+.like { background: none; border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; color: var(--text); }
+.like.on { color: var(--accent); border-color: var(--accent); }
+
+.tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.tabs button { background: none; border: 0; padding: 6px 12px; border-radius: 8px; color: var(--muted); }
+.tabs button.active { background: var(--card); color: var(--text); border: 1px solid var(--border); }
+
+.form { display: flex; flex-direction: column; gap: 14px; }
+.form label { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; color: var(--muted); }
+input, textarea, select {
+  font: inherit; padding: 10px; border: 1px solid var(--border); border-radius: 8px;
+  background: var(--bg); color: var(--text);
+}
+textarea.shayari { font-size: 1.1rem; }
+
+.profile-head { display: flex; gap: 16px; align-items: center; }
+.avatar { width: 72px; height: 72px; border-radius: 50%; }
+.profile-head h1 { margin: 0; font-size: 1.3rem; }
+.profile-head p { margin: 2px 0; }
